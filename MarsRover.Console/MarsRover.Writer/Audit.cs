@@ -8,6 +8,6 @@ namespace MarsRover.Writer
 {
     public abstract class Audit : IAudit
     {
-        public abstract void Log(int x, int y, char direction);
+        public abstract void Log(int x, int y, char direction, bool stuck);
     }
 }

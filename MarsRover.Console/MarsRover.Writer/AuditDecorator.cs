@@ -13,9 +13,9 @@ namespace MarsRover.Writer
         {
             _audit = aud;
         }
-        public override void Log(int x, int y, char direction)
+        public override void Log(int x, int y, char direction, bool stuck)
         {
-            _audit.Log(x,y,direction);
+            _audit.Log(x,y,direction,stuck);
         }
     }
 }

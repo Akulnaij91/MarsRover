@@ -8,11 +8,11 @@ namespace MarsRover.Core
 {
     public static class ChangeRoverPositionHandler
     {
-        public static (int,int,char) NewCoordinates(char command,(int,int) roverPosition, char actualOrientation, List<(int x, int z)> elencoOstacoli, int larghezzaMappa, int altezzaMappa)
+        public static (int,int,char,bool) NewCoordinates(char command,(int,int) roverPosition, char actualOrientation, List<(int x, int z)> elencoOstacoli, int larghezzaMappa, int altezzaMappa)
         {
             if (command=='L' || command =='R')
             {
-                return (roverPosition.Item1,roverPosition.Item2, RotationHandler(command, actualOrientation));
+                return (roverPosition.Item1,roverPosition.Item2, RotationHandler(command, actualOrientation),false);
             } 
             else
             {
@@ -40,12 +40,12 @@ namespace MarsRover.Core
                         nuoveCoordinate.Item2 = altezzaMappa - 1;
                     }
                     
-                    return (nuoveCoordinate.Item1, nuoveCoordinate.Item2, actualOrientation);
+                    return (nuoveCoordinate.Item1, nuoveCoordinate.Item2, actualOrientation,false);
 
                 }
-                else //se posizione è contenuta, ritorna posizione attuale
+                else //se posizione è contenuta, sono bloccato ritorna posizione attuale
                 {
-                    return (roverPosition.Item1, roverPosition.Item2, actualOrientation);
+                    return (roverPosition.Item1, roverPosition.Item2, actualOrientation,true);
                 }
             }
         }

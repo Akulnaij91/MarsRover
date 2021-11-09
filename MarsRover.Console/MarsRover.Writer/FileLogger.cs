@@ -15,9 +15,9 @@ namespace MarsRover.Writer
         {
             _configuration = configuration;
         }
-        public override void Log(int x, int y, char direction)
+        public override void Log(int x, int y, char direction, bool stuck)
         {
-            base.Log(x,y,direction);
+            base.Log(x,y,direction, stuck);
             var lastPosition = $"{x},{y},{direction};";
             File.WriteAllText(_configuration["pathnameOutput"], lastPosition);
         }

@@ -21,15 +21,15 @@ namespace MarsRover.MapCore
         public static readonly int _initialRoverY = 5;
 
 
-        public static void MapPositionDrawer(char actualRoverDirection, int actualRoverX, int actualRoverY)
+        public static void MapPositionDrawer(char actualRoverDirection, int actualRoverX, int actualRoverY, bool stuck)
         {
-            CreaMappa(_larghezzaMappa, _altezzaMappa, actualRoverDirection, actualRoverX, actualRoverY, _arrayTupleOstacoli);
+            CreaMappa(_larghezzaMappa, _altezzaMappa, actualRoverDirection, actualRoverX, actualRoverY, _arrayTupleOstacoli, stuck);
         }
 
 
         public static void MapInitializer()
         {
-            CreaMappa(_larghezzaMappa, _altezzaMappa, _initialDirection, _initialRoverX, _initialRoverY, _arrayTupleOstacoli);
+            CreaMappa(_larghezzaMappa, _altezzaMappa, _initialDirection, _initialRoverX, _initialRoverY, _arrayTupleOstacoli,false);
         }
 
 
@@ -89,9 +89,27 @@ namespace MarsRover.MapCore
         }
 
 
-        public static void CreaMappa(int numColonne, int numRighe, char direction, int x, int y, List<(int, int)> ostacoli)
+        public static void CreaMappa(int numColonne, int numRighe, char direction, int x, int y, List<(int, int)> ostacoli, bool stuck)
         {
-            Console.WriteLine($"GPS Scan of Mars Planet - Rover position at: {DateTime.Now}");
+            var direzione = "North";
+            if (direction == 'S')
+            {
+                direzione = "South";
+            } else if (direction == 'E')
+            {
+                direzione = "East";
+            } else if (direction == 'W')
+            {
+                direzione = "West";
+            }
+            var status = "Everything is fine!";
+            if (stuck)
+            {
+                status = "HOUSTON WE HAVE A PROBLEM!";
+            }
+            Console.WriteLine($"GPS Scan of Mars Planet - {DateTime.Now}");
+            Console.WriteLine($"Rover Gianlucuriosity - Coord: {x},{y} - Facing: {direzione}");
+            Console.WriteLine($"Status: {status}");
             for (var i = 0; i < numRighe; i++)
             {
                 if (i == y)

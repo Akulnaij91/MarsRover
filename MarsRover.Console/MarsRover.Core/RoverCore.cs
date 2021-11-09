@@ -48,9 +48,10 @@ namespace MarsRover.Core
                 ultimaPosizioneNota.Item1 = nuovaPosizione.Item1;
                 ultimaPosizioneNota.Item2 = nuovaPosizione.Item2;
                 ultimaDirezione = nuovaPosizione.Item3;
+                var bloccato = nuovaPosizione.Item4;
 
                 //Console logga coordinata + scrivi su stesso file la coordinata
-                _fileLogger.Log(ultimaPosizioneNota.Item1, ultimaPosizioneNota.Item2, ultimaDirezione);
+                _fileLogger.Log(ultimaPosizioneNota.Item1, ultimaPosizioneNota.Item2, ultimaDirezione, bloccato);
             }
 
 

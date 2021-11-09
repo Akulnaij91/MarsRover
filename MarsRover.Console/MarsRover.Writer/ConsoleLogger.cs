@@ -9,9 +9,9 @@ namespace MarsRover.Writer
 {
     public class ConsoleLogger : Audit
     {
-        public override void Log(int x, int y, char direction)
+        public override void Log(int x, int y, char direction, bool stuck)
         {
-            MapDrawer.MapPositionDrawer(direction, x, y);
+            MapDrawer.MapPositionDrawer(direction, x, y, stuck);
         }
     }
 }
