@@ -1,0 +1,5 @@
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Console\obj\Debug\net5.0\MarsRover.Console.csproj.AssemblyReference.cache
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Console\obj\Debug\net5.0\MarsRover.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Console\obj\Debug\net5.0\MarsRover.Console.AssemblyInfoInputs.cache
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Console\obj\Debug\net5.0\MarsRover.Console.AssemblyInfo.cs
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Console\obj\Debug\net5.0\MarsRover.Console.csproj.CoreCompileInputs.cache
