@@ -1,4 +1,5 @@
 ﻿using MarsRover.MapCore;
+using MarsRover.Model;
 using MarsRover.Reader;
 using MarsRover.Writer;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +17,9 @@ namespace MarsRover.Core
         private readonly IConfiguration _configuration;
         private readonly IAudit _fileLogger;
         private readonly IReader _reader;
+
+        Rover Curiosity = new Rover();
+
 
         public RoverCore(IConfiguration configuration, IReader reader, IAudit file)
         {

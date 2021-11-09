@@ -199,6 +199,16 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
+      "MarsRover.ChainHandler/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MarsRover.ChainHandler.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MarsRover.ChainHandler.dll": {}
+        }
+      },
       "MarsRover.MapCore/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -777,6 +787,11 @@
         "version.txt"
       ]
     },
+    "MarsRover.ChainHandler/1.0.0": {
+      "type": "project",
+      "path": "../MarsRover.ChainHandler/MarsRover.ChainHandler.csproj",
+      "msbuildProject": "../MarsRover.ChainHandler/MarsRover.ChainHandler.csproj"
+    },
     "MarsRover.MapCore/1.0.0": {
       "type": "project",
       "path": "../MarsRover.MapCore/MarsRover.MapCore.csproj",
@@ -800,6 +815,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MarsRover.ChainHandler >= 1.0.0",
       "MarsRover.MapCore >= 1.0.0",
       "MarsRover.Model >= 1.0.0",
       "MarsRover.Reader >= 1.0.0",
@@ -840,6 +856,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\MarsRover.ChainHandler\\MarsRover.ChainHandler.csproj": {
+              "projectPath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\MarsRover.ChainHandler\\MarsRover.ChainHandler.csproj"
+            },
             "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\MarsRover.MapCore\\MarsRover.MapCore.csproj": {
               "projectPath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\MarsRover.MapCore\\MarsRover.MapCore.csproj"
             },

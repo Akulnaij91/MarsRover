@@ -30,8 +30,8 @@ namespace MarsRover.Core
             {
                 //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                //Consolelogga la mappa aggiornata
-                //_roverCore.Engine();
+                
+
                 await Task.Delay(1000, stoppingToken);
             }
         }

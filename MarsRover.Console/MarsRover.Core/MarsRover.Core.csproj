@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MarsRover.ChainHandler\MarsRover.ChainHandler.csproj" />
     <ProjectReference Include="..\MarsRover.MapCore\MarsRover.MapCore.csproj" />
     <ProjectReference Include="..\MarsRover.Model\MarsRover.Model.csproj" />
     <ProjectReference Include="..\MarsRover.Reader\MarsRover.Reader.csproj" />

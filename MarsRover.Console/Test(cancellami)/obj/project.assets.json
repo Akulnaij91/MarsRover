@@ -634,10 +634,21 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "MarsRover.ChainHandler/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MarsRover.ChainHandler.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MarsRover.ChainHandler.dll": {}
+        }
+      },
       "MarsRover.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "MarsRover.ChainHandler": "1.0.0",
           "MarsRover.MapCore": "1.0.0",
           "MarsRover.Model": "1.0.0",
           "MarsRover.Reader": "1.0.0",
@@ -1895,6 +1906,11 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "MarsRover.ChainHandler/1.0.0": {
+      "type": "project",
+      "path": "../MarsRover.ChainHandler/MarsRover.ChainHandler.csproj",
+      "msbuildProject": "../MarsRover.ChainHandler/MarsRover.ChainHandler.csproj"
     },
     "MarsRover.Core/1.0.0": {
       "type": "project",
