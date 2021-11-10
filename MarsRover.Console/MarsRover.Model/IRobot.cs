@@ -5,8 +5,7 @@ namespace MarsRover.Model
 {
     public interface IRobot
     {
-        List<(int,int)> GetCoordinates();
+        CoordinateRover GetCoordinates();
 
-        char GetDirection();
     }
 }

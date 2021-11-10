@@ -1,4 +1,5 @@
 ﻿using MarsRover.MapCore;
+using MarsRover.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace MarsRover.Writer
 {
     public class ConsoleLogger : Audit
     {
-        public override void Log(int x, int y, char direction, bool stuck)
+        public override void Log(Rover myRover)
         {
-            MapDrawer.MapPositionDrawer(direction, x, y, stuck);
+            MapDrawer.MapPositionDrawer(myRover.Coordinates.Direzione, myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY, myRover.Coordinates.Stuck);
         }
     }
 }

@@ -488,8 +488,14 @@
           }
         }
       },
+      "MarsRover.ChainHandler/1.0.0": {
+        "runtime": {
+          "MarsRover.ChainHandler.dll": {}
+        }
+      },
       "MarsRover.Core/1.0.0": {
         "dependencies": {
+          "MarsRover.ChainHandler": "1.0.0",
           "MarsRover.MapCore": "1.0.0",
           "MarsRover.Model": "1.0.0",
           "MarsRover.Reader": "1.0.0",
@@ -841,6 +847,11 @@
       "sha512": "sha512-zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==",
       "path": "system.text.json/6.0.0",
       "hashPath": "system.text.json.6.0.0.nupkg.sha512"
+    },
+    "MarsRover.ChainHandler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "MarsRover.Core/1.0.0": {
       "type": "project",

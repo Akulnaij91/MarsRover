@@ -18,7 +18,7 @@ namespace MarsRover.Core
         private readonly IAudit _fileLogger;
         private readonly IReader _reader;
 
-        Rover Curiosity = new Rover();
+      
 
 
         public RoverCore(IConfiguration configuration, IReader reader, IAudit file)
@@ -30,40 +30,40 @@ namespace MarsRover.Core
 
         public void Engine()
         {
-            var tuplaOstacoli = MapDrawer._arrayTupleOstacoli ;
+            //Inizializza info geografiche
+            var tuplaOstacoli = MapDrawer._arrayTupleOstacoli;
             var listaComandi = _reader.GetComandiFromCSV(_configuration["pathnameInput"]).ToList();
-            //Prendi singoli comandi
-            Char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
-
-            var ultimaPosizioneNota = (MapDrawer._initialRoverX, MapDrawer._initialRoverY);
-            var ultimaDirezione = MapDrawer._initialDirection;
             var larghezzaMappa = MapDrawer._larghezzaMappa;
             var altezzaMappa = MapDrawer._altezzaMappa;
+            MapInformation marsMap = new MapInformation(tuplaOstacoli, larghezzaMappa, altezzaMappa);
 
+            //Inizializza coordinate iniziali
+            var coordinateIniziali = new CoordinateRover(MapDrawer._initialRoverX, MapDrawer._initialRoverY, MapDrawer._initialDirection, false);
 
+            //Inizializza rover
+            Rover myRover = new Rover("Curiosity", coordinateIniziali);
 
+            //Prendi singoli comandi dal file
+            Char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
+
+            var ultimaPosizioneNota = (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY);
+            var ultimaDirezione = myRover.Coordinates.Direzione;
+            
 
             //Cicla i comandi e ottieni una coordinata
            for (var i=0; i<elencoComandi.Length; i++)
             {
                 //Analizza ultima posizione nota e ottieni nuova coordinata
-                var nuovaPosizione = ChangeRoverPositionHandler.NewCoordinates(elencoComandi[i], ultimaPosizioneNota,ultimaDirezione,tuplaOstacoli,larghezzaMappa,altezzaMappa);
+                var nuovaPosizione = ChainCommandAnalysis.NewCoordinates(elencoComandi[i], ultimaPosizioneNota,ultimaDirezione,tuplaOstacoli,larghezzaMappa,altezzaMappa);
 
-                ultimaPosizioneNota.Item1 = nuovaPosizione.Item1;
-                ultimaPosizioneNota.Item2 = nuovaPosizione.Item2;
-                ultimaDirezione = nuovaPosizione.Item3;
-                var bloccato = nuovaPosizione.Item4;
+                myRover.Coordinates.CoordinataX = nuovaPosizione.Item1;
+                myRover.Coordinates.CoordinataY = nuovaPosizione.Item2;
+                myRover.Coordinates.Direzione = nuovaPosizione.Item3;
+                myRover.Coordinates.Stuck = nuovaPosizione.Item4;
 
                 //Console logga coordinata + scrivi su stesso file la coordinata
-                _fileLogger.Log(ultimaPosizioneNota.Item1, ultimaPosizioneNota.Item2, ultimaDirezione, bloccato);
+                _fileLogger.Log(myRover);
             }
-
-
-
-            
-
-
-
         }
 
     }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using MarsRover.Model;
+using System;
 
 namespace MarsRover.Writer
 {
     public interface IAudit
     {
-        void Log(int x, int y, char direction, bool stuck);
+        void Log(Rover myRover);
     }
 }

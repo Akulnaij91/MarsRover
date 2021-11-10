@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 using MarsRover.MapCore;
+using System;
 
 namespace MarsRover.Core
 {
@@ -28,11 +29,11 @@ namespace MarsRover.Core
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                
+                _logger.LogInformation("Vi prego, non abbandonatemi quassù tutto solo :(");
 
-                await Task.Delay(1000, stoppingToken);
+                await Task.Delay(10000, stoppingToken);
             }
         }
     }

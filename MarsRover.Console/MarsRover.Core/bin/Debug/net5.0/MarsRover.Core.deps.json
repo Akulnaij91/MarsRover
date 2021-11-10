@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "MarsRover.Core/1.0.0": {
         "dependencies": {
+          "MarsRover.ChainHandler": "1.0.0",
           "MarsRover.MapCore": "1.0.0",
           "MarsRover.Model": "1.0.0",
           "MarsRover.Reader": "1.0.0",
@@ -143,6 +144,11 @@
         }
       },
       "System.Text.Json/4.7.2": {},
+      "MarsRover.ChainHandler/1.0.0": {
+        "runtime": {
+          "MarsRover.ChainHandler.dll": {}
+        }
+      },
       "MarsRover.MapCore/1.0.0": {
         "dependencies": {
           "Scrutor": "3.3.0"
@@ -307,6 +313,11 @@
       "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
       "path": "system.text.json/4.7.2",
       "hashPath": "system.text.json.4.7.2.nupkg.sha512"
+    },
+    "MarsRover.ChainHandler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "MarsRover.MapCore/1.0.0": {
       "type": "project",

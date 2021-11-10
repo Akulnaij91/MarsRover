@@ -8,19 +8,25 @@ namespace MarsRover.Model
 {
     public class Rover : IRobot
     {
-        public string Name = "Curiosity";
-        public List<(int,int)> Coordinates;
-        public char Direction;
+        public string Name;
+        public CoordinateRover Coordinates;
 
-        public List<(int, int)> GetCoordinates()
+        public Rover(string nome, CoordinateRover coord)
+        {
+            Name = nome;
+            Coordinates = coord;
+        }
+
+        public string RememberMyName()
+        {
+            return Name;
+        }
+        public CoordinateRover GetCoordinates()
         {
             return Coordinates;
         }
 
-        public char GetDirection()
-        {
-            return Direction;
-        }
+     
 
        
     }
