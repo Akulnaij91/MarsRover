@@ -1,6 +1,4 @@
 ﻿using MarsRover.Model;
-using System;
-using System.Collections.Generic;
 
 
 namespace MarsRover.ChainHandler

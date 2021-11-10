@@ -1,40 +1,51 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 
 namespace MarsRover.MapCore
 {
-    public static class MapDrawer
+    public class MapDrawer
     {
-        public static readonly int _larghezzaMappa = 10;
-        public static readonly int _altezzaMappa = 10;
-        public static readonly List<(int, int)> _arrayTupleOstacoli =
-            new List<(int, int)>
-              {
+        public int _larghezzaMappa;
+        public readonly int _altezzaMappa;
+        public readonly List<(int, int)> _arrayTupleOstacoli =
+            new()
+            {
                   (1, 0),
                   (5, 5),
                   (1, 9),
                   (7, 4),
                   (6, 2)
               };
-        public static readonly char _initialDirection = 'N';
-        public static readonly int _initialRoverX = 2;
-        public static readonly int _initialRoverY = 5;
+        public readonly char _initialDirection;
+        public readonly int _initialRoverX;
+        public readonly int _initialRoverY;
+
+        public MapDrawer(int larghezzaMappa, int altezzaMappa, List<(int,int)> ostacoli, char initialDirection, int initialX, int initialY)
+        {
+            _larghezzaMappa = larghezzaMappa;
+            _altezzaMappa = altezzaMappa;
+            _arrayTupleOstacoli = ostacoli;
+            _initialDirection = initialDirection;
+            _initialRoverX = initialX;
+            _initialRoverY = initialY;
+        }
 
 
-        public static void MapPositionDrawer(char actualRoverDirection, int actualRoverX, int actualRoverY, bool stuck)
+        public void MapPositionDrawer(char actualRoverDirection, int actualRoverX, int actualRoverY, bool stuck)
         {
             CreaMappa(_larghezzaMappa, _altezzaMappa, actualRoverDirection, actualRoverX, actualRoverY, _arrayTupleOstacoli, stuck);
         }
 
 
-        public static void MapInitializer()
+        public void MapInitializer()
         {
             CreaMappa(_larghezzaMappa, _altezzaMappa, _initialDirection, _initialRoverX, _initialRoverY, _arrayTupleOstacoli,false);
         }
 
 
 
-        public static void CreaRiga(int numColonne, int x, bool rigaVuota, char direction, int rigaattuale, List<(int, int)> ostacoli)
+        public void CreaRiga(int numColonne, int x, bool rigaVuota, char direction, int rigaattuale, List<(int, int)> ostacoli)
         {
             string rigaTop = "";
             string rigaMiddle = "";
@@ -86,7 +97,7 @@ namespace MarsRover.MapCore
         }
 
 
-        public static void CreaMappa(int numColonne, int numRighe, char direction, int x, int y, List<(int, int)> ostacoli, bool stuck)
+        public void CreaMappa(int numColonne, int numRighe, char direction, int x, int y, List<(int, int)> ostacoli, bool stuck)
         {
             var direzione = "North";
             if (direction == 'S')

@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover.Model
+﻿namespace MarsRover.Model
 {
     public class MissionStatus
     {
         public string Status;
-        public Rover myRover;
+        public Rover MyRover;
 
         public MissionStatus(string status, Rover rover)
         {
             Status = status;
-            myRover = rover;
+            MyRover = rover;
 
         }
 

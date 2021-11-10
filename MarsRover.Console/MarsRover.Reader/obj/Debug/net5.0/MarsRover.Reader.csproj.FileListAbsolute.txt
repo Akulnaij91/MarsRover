@@ -2,7 +2,6 @@ C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\bin\Deb
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\bin\Debug\net5.0\MarsRover.Reader.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\bin\Debug\net5.0\ref\MarsRover.Reader.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\bin\Debug\net5.0\MarsRover.Reader.pdb
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\obj\Debug\net5.0\MarsRover.Reader.csproj.AssemblyReference.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\obj\Debug\net5.0\MarsRover.Reader.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\obj\Debug\net5.0\MarsRover.Reader.AssemblyInfoInputs.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Reader\obj\Debug\net5.0\MarsRover.Reader.AssemblyInfo.cs

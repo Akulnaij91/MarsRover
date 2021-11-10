@@ -105,6 +105,7 @@
       "System.Text.Json/4.7.2": {},
       "MarsRover.MapCore/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Scrutor": "3.3.0"
         },
         "runtime": {

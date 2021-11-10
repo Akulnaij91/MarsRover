@@ -1,16 +1,12 @@
 ﻿using MarsRover.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsRover.ChainHandler
 {
-   
+
     public class MovementForwardCalculator : MovementHandler
     {
-        public override (int, int, char, bool) HandleRequest(char command, Rover myRover, MapInformation map)
+      public override (int, int, char, bool) HandleRequest(char command, Rover myRover, MapInformation map)
         {
             if (command =='F')
             {

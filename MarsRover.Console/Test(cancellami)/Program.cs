@@ -2,10 +2,9 @@
 using MarsRover.Reader;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
 using MarsRover.Writer;
 
-namespace Test_cancellami_
+namespace MarsRover.Service
 {
     class Program
     {

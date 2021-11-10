@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Core", "MarsRover.Core\MarsRover.Core.csproj", "{2657581C-9904-4CCF-8C85-556E7A2864E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Core", "MarsRover.Core\MarsRover.Core.csproj", "{2657581C-9904-4CCF-8C85-556E7A2864E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test(cancellami)", "Test(cancellami)\Test(cancellami).csproj", "{E0D67303-85D5-4E93-8FD6-76B448F36881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Service", "Test(cancellami)\MarsRover.Service.csproj", "{E0D67303-85D5-4E93-8FD6-76B448F36881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Model", "MarsRover.Model\MarsRover.Model.csproj", "{6E6E027A-A100-4B68-B4E2-E829E4B15B6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Model", "MarsRover.Model\MarsRover.Model.csproj", "{6E6E027A-A100-4B68-B4E2-E829E4B15B6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Reader", "MarsRover.Reader\MarsRover.Reader.csproj", "{2241DDB9-54BE-47F8-ACDC-6D21BBA1721D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Reader", "MarsRover.Reader\MarsRover.Reader.csproj", "{2241DDB9-54BE-47F8-ACDC-6D21BBA1721D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Writer", "MarsRover.Writer\MarsRover.Writer.csproj", "{98FE15A5-C25C-4835-B4B0-AB9BF1A475DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Writer", "MarsRover.Writer\MarsRover.Writer.csproj", "{98FE15A5-C25C-4835-B4B0-AB9BF1A475DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.MapCore", "MarsRover.MapCore\MarsRover.MapCore.csproj", "{0CB7661B-333D-407A-B1D1-115E1BCC750C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.MapCore", "MarsRover.MapCore\MarsRover.MapCore.csproj", "{0CB7661B-333D-407A-B1D1-115E1BCC750C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.ChainHandler", "MarsRover.ChainHandler\MarsRover.ChainHandler.csproj", "{CA9E5185-1008-4847-8E9E-5664F998E83A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.ChainHandler", "MarsRover.ChainHandler\MarsRover.ChainHandler.csproj", "{CA9E5185-1008-4847-8E9E-5664F998E83A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileManager", "FileManager", "{E6CE9FAE-4E45-416B-AC23-5936D05944A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{8A04C730-26EA-4297-A69A-DFDD0CD0C8BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +58,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2657581C-9904-4CCF-8C85-556E7A2864E9} = {8A04C730-26EA-4297-A69A-DFDD0CD0C8BD}
+		{6E6E027A-A100-4B68-B4E2-E829E4B15B6D} = {8A04C730-26EA-4297-A69A-DFDD0CD0C8BD}
+		{2241DDB9-54BE-47F8-ACDC-6D21BBA1721D} = {E6CE9FAE-4E45-416B-AC23-5936D05944A0}
+		{98FE15A5-C25C-4835-B4B0-AB9BF1A475DC} = {E6CE9FAE-4E45-416B-AC23-5936D05944A0}
+		{0CB7661B-333D-407A-B1D1-115E1BCC750C} = {8A04C730-26EA-4297-A69A-DFDD0CD0C8BD}
+		{CA9E5185-1008-4847-8E9E-5664F998E83A} = {8A04C730-26EA-4297-A69A-DFDD0CD0C8BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F986EFB1-B9C5-4F2E-B6A3-B4152D110029}

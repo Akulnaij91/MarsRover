@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover.Model
+﻿namespace MarsRover.Model
 {
     public class CoordinateRover
     {
@@ -13,7 +7,7 @@ namespace MarsRover.Model
         public char Direzione;
         public bool Stuck;
 
-        public CoordinateRover(int x, int y, char dir, bool stuck)
+        public CoordinateRover(int x, int y, char dir, bool stuck=false)
         {
             CoordinataX = x;
             CoordinataY = y;

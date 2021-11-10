@@ -1,9 +1,5 @@
-﻿using MarsRover.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MarsRover.MapCore;
+using MarsRover.Model;
 
 namespace MarsRover.Writer
 {
@@ -14,9 +10,9 @@ namespace MarsRover.Writer
         {
             _audit = aud;
         }
-        public override void Log(Rover myRover)
+        public override void Log(Rover myRover, MapDrawer map)
         {
-            _audit.Log(myRover);
+            _audit.Log(myRover, map);
         }
     }
 }

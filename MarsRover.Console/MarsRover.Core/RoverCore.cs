@@ -3,12 +3,10 @@ using MarsRover.Model;
 using MarsRover.Reader;
 using MarsRover.Writer;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsRover.Core
 {
@@ -16,38 +14,41 @@ namespace MarsRover.Core
     {
         private readonly IConfiguration _configuration;
         private readonly IAudit _fileLogger;
+        private readonly ILogger<RoverCore> _logger;
         private readonly IReader _reader;
-        public RoverCore(IConfiguration configuration, IReader reader, IAudit file)
+        public RoverCore(IConfiguration configuration, IReader reader, IAudit file, ILogger<RoverCore> logger)
         {
             _configuration = configuration;
             _reader = reader;
             _fileLogger = file;
+            _logger = logger;
         }
-        public MissionStatus Engine(Rover myRover, MapInformation marsMap)
+        public MissionStatus Engine(Rover myRover, MapDrawer mapdrawer, MapInformation marsMap)
         {
             //Comandi
             var listaComandi = _reader.GetComandiFromCSV(_configuration["pathnameInput"]).ToList();
 
             if (listaComandi.Count<=0)
             {
-                Console.WriteLine($"MarsTime - {DateTime.Now} - Rover: {GeneratoreFrasiDiAbbandono(myRover)}");
+                _logger.LogInformation($"MarsTime - {DateTime.Now} - Rover: {GeneratoreFrasiDiAbbandono(myRover)}");
                 return new MissionStatus("Awaiting...", myRover);
             } else
             {
                 //Prendi singoli comandi dal file
-                Char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
+                char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
                 //Cicla i comandi e ottieni una coordinata
+
                 for (var i = 0; i < elencoComandi.Length; i++)
                 {
                     //Analizza ultima posizione nota e ottieni nuova coordinata
                     var nuovaPosizione = ChainCommandAnalysis.NewCoordinates(elencoComandi[i], myRover, marsMap);
-                    myRover.Coordinates.CoordinataX = nuovaPosizione.Item1;
-                    myRover.Coordinates.CoordinataY = nuovaPosizione.Item2;
-                    myRover.Coordinates.Direzione = nuovaPosizione.Item3;
-                    myRover.Coordinates.Stuck = nuovaPosizione.Item4;
+                    myRover.Coordinates.CoordinataX = nuovaPosizione.X;
+                    myRover.Coordinates.CoordinataY = nuovaPosizione.Y;
+                    myRover.Coordinates.Direzione = nuovaPosizione.Oriented;
+                    myRover.Coordinates.Stuck = nuovaPosizione.Stuck;
 
                     //Console logga coordinata + scrivi su stesso file la coordinata
-                    _fileLogger.Log(myRover);
+                    _fileLogger.Log(myRover, mapdrawer);
                 }
                 //Svuoto file letto
                 File.WriteAllText(_configuration["pathnameInput"], "");

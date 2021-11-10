@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xTmJIGE84O+AwcFxkUOYX2wEiLGEQ8RkEeM+4FQJVTlKJDN8D7wT+HXTzsF9vijEUBRUqqvhlA3tDeF6A1X7Ag==",
+  "dgSpecHash": "tyo4cIAgMcP5yMh0RsDbL2QAgnJ83OzPq6v3tYi7LdM8TEj4q/oV8ysaJlVKWNEcodqTR6WTCDmQbAk5c/NYIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\Test(cancellami).csproj",
+  "projectFilePath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\MarsRover.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mob13\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
     "C:\\Users\\mob13\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",

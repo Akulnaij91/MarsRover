@@ -1,11 +1,7 @@
-﻿using MarsRover.Model;
+﻿using MarsRover.MapCore;
+using MarsRover.Model;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsRover.Writer
 {
@@ -16,9 +12,9 @@ namespace MarsRover.Writer
         {
             _configuration = configuration;
         }
-        public override void Log(Rover myRover)
+        public override void Log(Rover myRover, MapDrawer map)
         {
-            base.Log(myRover);
+            base.Log(myRover, map);
             var lastPosition = $"{myRover.Coordinates.CoordinataX},{myRover.Coordinates.CoordinataY},{myRover.Coordinates.Direzione};";
             File.WriteAllText(_configuration["pathnameOutput"], lastPosition);
         }

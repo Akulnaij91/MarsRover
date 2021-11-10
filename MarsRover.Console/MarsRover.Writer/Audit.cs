@@ -1,14 +1,10 @@
-﻿using MarsRover.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MarsRover.MapCore;
+using MarsRover.Model;
 
 namespace MarsRover.Writer
 {
     public abstract class Audit : IAudit
     {
-        public abstract void Log(Rover rover);
+        public abstract void Log(Rover rover, MapDrawer map);
     }
 }

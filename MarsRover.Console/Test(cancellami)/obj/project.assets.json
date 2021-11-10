@@ -671,6 +671,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Scrutor": "3.3.0"
         },
         "compile": {
@@ -1956,9 +1957,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\Test(cancellami).csproj",
-      "projectName": "Test(cancellami)",
-      "projectPath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\Test(cancellami).csproj",
+      "projectUniqueName": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\MarsRover.Service.csproj",
+      "projectName": "MarsRover.Service",
+      "projectPath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\MarsRover.Service.csproj",
       "packagesPath": "C:\\Users\\mob13\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\Test(cancellami)\\obj\\",
       "projectStyle": "PackageReference",
