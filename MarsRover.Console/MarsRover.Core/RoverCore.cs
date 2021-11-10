@@ -18,7 +18,7 @@ namespace MarsRover.Core
         private readonly IAudit _fileLogger;
         private readonly IReader _reader;
 
-      
+        private readonly Rover trackMyRover;
 
 
         public RoverCore(IConfiguration configuration, IReader reader, IAudit file)
@@ -28,7 +28,7 @@ namespace MarsRover.Core
             _fileLogger = file;
         }
 
-        public void Engine()
+        public Rover Engine()
         {
             //Inizializza info geografiche
             var tuplaOstacoli = MapDrawer._arrayTupleOstacoli;
@@ -60,9 +60,12 @@ namespace MarsRover.Core
                 //Console logga coordinata + scrivi su stesso file la coordinata
                 _fileLogger.Log(myRover);
             }
+
+            return myRover;
+
         }
 
-        public string GeneratoreFrasiDiAbbandono()
+        public string GeneratoreFrasiDiAbbandono(Rover myRover)
         {
             string[] frasi = new string[] { 
                 "Dai amici scherzavo, portatemi a casa",
@@ -78,8 +81,9 @@ namespace MarsRover.Core
             };
 
             Random rnd = new Random();
-
-            return frasi[rnd.Next(0, frasi.Length)];
+            return $"Rover {myRover.Name} " +
+                $"- Last position {myRover.Coordinates.CoordinataX},{myRover.Coordinates.CoordinataY},{myRover.Coordinates.Direzione} " +
+                $"{Environment.NewLine}{frasi[rnd.Next(0, frasi.Length)]}";
         }
 
     }

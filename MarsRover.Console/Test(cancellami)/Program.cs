@@ -18,7 +18,7 @@ namespace Test_cancellami_
             Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((host, config) =>
             {
-                //config.AddJsonFile()
+                //config.AddJsonFile(pathnamefilejsonchecreitu)
             })
             .ConfigureServices((hostContext, services) =>
                 {

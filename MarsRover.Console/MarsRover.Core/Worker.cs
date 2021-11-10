@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MarsRover.MapCore;
 using System;
+using MarsRover.Model;
 
 namespace MarsRover.Core
 {
@@ -25,12 +26,13 @@ namespace MarsRover.Core
         {
             //Parte all'inizio
             MapDrawer.MapInitializer();
-            _roverCore.Engine();
+            Rover myRover = _roverCore.Engine();
+            Console.WriteLine($"MarsTime - {DateTime.Now} - Rover: {_roverCore.GeneratoreFrasiDiAbbandono(myRover)}");
+
 
             while (!stoppingToken.IsCancellationRequested)
             {
                 //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                Console.WriteLine($"MarsTime - {DateTime.Now} - Rover: {_roverCore.GeneratoreFrasiDiAbbandono()}");
                 await Task.Delay(10000, stoppingToken);
             }
         }
