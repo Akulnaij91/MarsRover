@@ -24,16 +24,28 @@ namespace MarsRover.Core
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            //Parte all'inizio
-            MapDrawer.MapInitializer();
-            Rover myRover = _roverCore.Engine();
-            Console.WriteLine($"MarsTime - {DateTime.Now} - Rover: {_roverCore.GeneratoreFrasiDiAbbandono(myRover)}");
+            //Inizializzo rover
+            CoordinateRover coordinateIniziali = new CoordinateRover(MapDrawer._initialRoverX, MapDrawer._initialRoverY, MapDrawer._initialDirection, false);
+            Rover myRover = new Rover ("Curiosity", coordinateIniziali);
 
+            //Parte disegnando posizione all'inizio
+            MapDrawer.MapInitializer();
+
+            //Inizializza info geografiche
+            var tuplaOstacoli = MapDrawer._arrayTupleOstacoli;
+            var larghezzaMappa = MapDrawer._larghezzaMappa;
+            var altezzaMappa = MapDrawer._altezzaMappa;
+            MapInformation marsMap = new MapInformation(tuplaOstacoli, larghezzaMappa, altezzaMappa);
 
             while (!stoppingToken.IsCancellationRequested)
             {
                 //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(10000, stoppingToken);
+                var commandExecution = _roverCore.Engine(myRover, marsMap);
+                myRover.Coordinates = commandExecution.myRover.Coordinates;
+                myRover.MissionStatus = commandExecution.Status;
+                Console.WriteLine($"Mission Rover Status - {myRover.MissionStatus}");
+                await Task.Delay(30000, stoppingToken);
+
             }
         }
     }

@@ -1,8 +1,3 @@
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.csproj.AssemblyReference.cache
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.AssemblyInfoInputs.cache
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.AssemblyInfo.cs
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.csproj.CoreCompileInputs.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug\net5.0\appsettings.json
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug\net5.0\MarsRover.Core.deps.json
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug\net5.0\MarsRover.Core.dll
@@ -18,6 +13,11 @@ C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug\net5.0\MarsRover.Model.pdb
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug\net5.0\MarsRover.Reader.pdb
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\bin\Debug\net5.0\MarsRover.Writer.pdb
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.csproj.AssemblyReference.cache
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.AssemblyInfoInputs.cache
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.AssemblyInfo.cs
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.csproj.CoreCompileInputs.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.csproj.CopyComplete
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\MarsRover.Core.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Core\obj\Debug\net5.0\ref\MarsRover.Core.dll

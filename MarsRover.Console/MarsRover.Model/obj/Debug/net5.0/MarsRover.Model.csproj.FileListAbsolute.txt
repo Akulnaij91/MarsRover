@@ -9,4 +9,3 @@ C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Model\obj\Debu
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Model\obj\Debug\net5.0\MarsRover.Model.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Model\obj\Debug\net5.0\ref\MarsRover.Model.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Model\obj\Debug\net5.0\MarsRover.Model.pdb
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.Model\obj\Debug\net5.0\MarsRover.Model.csproj.AssemblyReference.cache

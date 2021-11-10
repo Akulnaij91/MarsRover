@@ -10,6 +10,7 @@ namespace MarsRover.Model
     {
         public string Name;
         public CoordinateRover Coordinates;
+        public string MissionStatus;
 
         public Rover(string nome, CoordinateRover coord)
         {

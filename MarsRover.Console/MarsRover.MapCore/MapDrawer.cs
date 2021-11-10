@@ -39,7 +39,6 @@ namespace MarsRover.MapCore
             string rigaTop = "";
             string rigaMiddle = "";
             string rigaBottom = "";
-
             string top = "┌───┐";
             string middleEmpty = "│   │";
             string middleObstacle = "│┼┼┼│";
@@ -81,11 +80,9 @@ namespace MarsRover.MapCore
                 }
                 rigaBottom += bottom;
             }
-
             Console.WriteLine(rigaTop);
             Console.WriteLine(rigaMiddle);
             Console.WriteLine(rigaBottom);
-           
         }
 
 
@@ -108,7 +105,7 @@ namespace MarsRover.MapCore
                 status = "HOUSTON WE HAVE A PROBLEM!";
             }
             Console.WriteLine($"GPS Scan of Mars Planet - {DateTime.Now}");
-            Console.WriteLine($"Rover Gianlucuriosity - Coord: {x},{y} - Facing: {direzione}");
+            Console.WriteLine($"Rover coord: {x},{y} - Facing: {direzione}");
             Console.WriteLine($"Status: {status}");
             for (var i = 0; i < numRighe; i++)
             {

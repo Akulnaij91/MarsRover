@@ -1,8 +1,3 @@
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).csproj.AssemblyReference.cache
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).AssemblyInfoInputs.cache
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).AssemblyInfo.cs
-C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).csproj.CoreCompileInputs.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Debug\net5.0\Test(cancellami).exe
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Debug\net5.0\appsettings.json
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Debug\net5.0\Test(cancellami).deps.json
@@ -58,6 +53,11 @@ C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Deb
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Debug\net5.0\MarsRover.MapCore.pdb
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Debug\net5.0\MarsRover.Model.pdb
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\bin\Debug\net5.0\MarsRover.Reader.pdb
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).csproj.AssemblyReference.cache
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).AssemblyInfoInputs.cache
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).AssemblyInfo.cs
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).csproj.CoreCompileInputs.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).csproj.CopyComplete
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\Test(cancellami).dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\Test(cancellami)\obj\Debug\net5.0\ref\Test(cancellami).dll

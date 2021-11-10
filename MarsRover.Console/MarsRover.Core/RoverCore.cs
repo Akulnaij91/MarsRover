@@ -17,57 +17,48 @@ namespace MarsRover.Core
         private readonly IConfiguration _configuration;
         private readonly IAudit _fileLogger;
         private readonly IReader _reader;
-
-        private readonly Rover trackMyRover;
-
-
         public RoverCore(IConfiguration configuration, IReader reader, IAudit file)
         {
             _configuration = configuration;
             _reader = reader;
             _fileLogger = file;
         }
-
-        public Rover Engine()
+        public MissionStatus Engine(Rover myRover, MapInformation marsMap)
         {
-            //Inizializza info geografiche
-            var tuplaOstacoli = MapDrawer._arrayTupleOstacoli;
+            //Comandi
             var listaComandi = _reader.GetComandiFromCSV(_configuration["pathnameInput"]).ToList();
-            var larghezzaMappa = MapDrawer._larghezzaMappa;
-            var altezzaMappa = MapDrawer._altezzaMappa;
-            MapInformation marsMap = new MapInformation(tuplaOstacoli, larghezzaMappa, altezzaMappa);
 
-            //Inizializza coordinate iniziali
-            var coordinateIniziali = new CoordinateRover(MapDrawer._initialRoverX, MapDrawer._initialRoverY, MapDrawer._initialDirection, false);
-
-            //Inizializza rover
-            Rover myRover = new Rover("Curiosity", coordinateIniziali);
-
-            //Prendi singoli comandi dal file
-            Char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
-
-            //Cicla i comandi e ottieni una coordinata
-           for (var i=0; i<elencoComandi.Length; i++)
+            if (listaComandi.Count<=0)
             {
-                //Analizza ultima posizione nota e ottieni nuova coordinata
-                var nuovaPosizione = ChainCommandAnalysis.NewCoordinates(elencoComandi[i], myRover, marsMap);
+                Console.WriteLine($"MarsTime - {DateTime.Now} - Rover: {GeneratoreFrasiDiAbbandono(myRover)}");
+                return new MissionStatus("Awaiting...", myRover);
+            } else
+            {
+                //Prendi singoli comandi dal file
+                Char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
+                //Cicla i comandi e ottieni una coordinata
+                for (var i = 0; i < elencoComandi.Length; i++)
+                {
+                    //Analizza ultima posizione nota e ottieni nuova coordinata
+                    var nuovaPosizione = ChainCommandAnalysis.NewCoordinates(elencoComandi[i], myRover, marsMap);
+                    myRover.Coordinates.CoordinataX = nuovaPosizione.Item1;
+                    myRover.Coordinates.CoordinataY = nuovaPosizione.Item2;
+                    myRover.Coordinates.Direzione = nuovaPosizione.Item3;
+                    myRover.Coordinates.Stuck = nuovaPosizione.Item4;
 
-                myRover.Coordinates.CoordinataX = nuovaPosizione.Item1;
-                myRover.Coordinates.CoordinataY = nuovaPosizione.Item2;
-                myRover.Coordinates.Direzione = nuovaPosizione.Item3;
-                myRover.Coordinates.Stuck = nuovaPosizione.Item4;
+                    //Console logga coordinata + scrivi su stesso file la coordinata
+                    _fileLogger.Log(myRover);
+                }
+                //Svuoto file letto
+                File.WriteAllText(_configuration["pathnameInput"], "");
 
-                //Console logga coordinata + scrivi su stesso file la coordinata
-                _fileLogger.Log(myRover);
+                return new MissionStatus("Commands executed", myRover);
             }
-
-            return myRover;
-
         }
 
         public string GeneratoreFrasiDiAbbandono(Rover myRover)
         {
-            string[] frasi = new string[] { 
+            string[] frasi = new string[] {
                 "Dai amici scherzavo, portatemi a casa",
                 "Mi è sembrato di vedere qualcosa! o_O",
                 "Beep-boop-beep. Scherzo, so parlare",

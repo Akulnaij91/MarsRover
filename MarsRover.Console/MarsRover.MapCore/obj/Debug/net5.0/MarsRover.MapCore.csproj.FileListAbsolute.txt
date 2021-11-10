@@ -2,6 +2,7 @@ C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\bin\De
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\bin\Debug\net5.0\MarsRover.MapCore.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\bin\Debug\net5.0\ref\MarsRover.MapCore.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\bin\Debug\net5.0\MarsRover.MapCore.pdb
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\obj\Debug\net5.0\MarsRover.MapCore.csproj.AssemblyReference.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\obj\Debug\net5.0\MarsRover.MapCore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\obj\Debug\net5.0\MarsRover.MapCore.AssemblyInfoInputs.cache
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.MapCore\obj\Debug\net5.0\MarsRover.MapCore.AssemblyInfo.cs
