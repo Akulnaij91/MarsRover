@@ -145,6 +145,9 @@
       },
       "System.Text.Json/4.7.2": {},
       "MarsRover.ChainHandler/1.0.0": {
+        "dependencies": {
+          "MarsRover.Model": "1.0.0"
+        },
         "runtime": {
           "MarsRover.ChainHandler.dll": {}
         }

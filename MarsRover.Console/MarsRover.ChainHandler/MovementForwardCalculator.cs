@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarsRover.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,62 +10,62 @@ namespace MarsRover.ChainHandler
    
     public class MovementForwardCalculator : MovementHandler
     {
-        public override (int, int, char, bool) HandleRequest(char command, (int, int) roverPosition, char actualOrientation, List<(int x, int z)> elencoOstacoli, int larghezzaMappa, int altezzaMappa)
+        public override (int, int, char, bool) HandleRequest(char command, Rover myRover, MapInformation map)
         {
             if (command =='F')
             {
-                (int, int) nuoveCoordinate = TuplaCreator(command, roverPosition, actualOrientation, elencoOstacoli, larghezzaMappa, altezzaMappa);
+                (int, int) nuoveCoordinate = TuplaCreator(command, myRover, map);
 
                 //Se non andasse a finire su un ostacolo, verifico Effetto pacman
-                if (!elencoOstacoli.Contains(nuoveCoordinate))
+                if (!map.ElencoOstacoli.Contains(nuoveCoordinate))
                 {
-                    if (nuoveCoordinate.Item1 >= larghezzaMappa)
+                    if (nuoveCoordinate.Item1 >= map.LarghezzaMappa)
                     {
                         nuoveCoordinate.Item1 = 0;
                     }
                     else if (nuoveCoordinate.Item1 < 0)
                     {
-                        nuoveCoordinate.Item1 = larghezzaMappa - 1;
+                        nuoveCoordinate.Item1 = map.LarghezzaMappa - 1;
                     }
-                    else if (nuoveCoordinate.Item2 >= altezzaMappa)
+                    else if (nuoveCoordinate.Item2 >= map.AltezzaMappa)
                     {
                         nuoveCoordinate.Item2 = 0;
                     }
                     else if (nuoveCoordinate.Item2 < 0)
                     {
-                        nuoveCoordinate.Item2 = altezzaMappa - 1;
+                        nuoveCoordinate.Item2 = map.AltezzaMappa - 1;
                     }
-                    return (nuoveCoordinate.Item1, nuoveCoordinate.Item2, actualOrientation, false);
+                    return (nuoveCoordinate.Item1, nuoveCoordinate.Item2, myRover.Coordinates.Direzione, false);
                 }
                 else
                 {
-                    return (roverPosition.Item1, roverPosition.Item2, actualOrientation, true);
+                    return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY, myRover.Coordinates.Direzione, true);
                 }
 
             } 
             else
             {
-                return successor.HandleRequest(command, roverPosition, actualOrientation, elencoOstacoli, larghezzaMappa, altezzaMappa);
+                return successor.HandleRequest(command, myRover, map);
             }
         }
 
-        public (int, int) TuplaCreator(char command, (int, int) roverPosition, char actualOrientation, List<(int x, int z)> elencoOstacoli, int larghezzaMappa, int altezzaMappa)
+        public (int, int) TuplaCreator(char command, Rover myRover, MapInformation map)
         {
-            if (command == 'F' && actualOrientation == 'N')
+            if (command == 'F' && myRover.Coordinates.Direzione == 'N')
             {
-                return (roverPosition.Item1, roverPosition.Item2 - 1);
+                return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY - 1);
             }
-            else if (command == 'F' && actualOrientation == 'S')
+            else if (command == 'F' && myRover.Coordinates.Direzione == 'S')
             {
-                return (roverPosition.Item1, roverPosition.Item2 + 1);
+                return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY + 1);
             }
-            else if (command == 'F' && actualOrientation == 'E')
+            else if (command == 'F' && myRover.Coordinates.Direzione == 'E')
             {
-                return (roverPosition.Item1 + 1, roverPosition.Item2);
+                return (myRover.Coordinates.CoordinataX + 1, myRover.Coordinates.CoordinataY);
             }
             else 
             {
-                return (roverPosition.Item1 - 1, roverPosition.Item2);
+                return (myRover.Coordinates.CoordinataX - 1, myRover.Coordinates.CoordinataY);
             }
             
         }

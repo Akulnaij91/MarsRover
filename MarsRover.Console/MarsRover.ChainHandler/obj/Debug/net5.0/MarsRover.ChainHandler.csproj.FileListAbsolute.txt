@@ -10,3 +10,6 @@ C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\o
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\obj\Debug\net5.0\MarsRover.ChainHandler.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\obj\Debug\net5.0\ref\MarsRover.ChainHandler.dll
 C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\obj\Debug\net5.0\MarsRover.ChainHandler.pdb
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\bin\Debug\net5.0\MarsRover.Model.dll
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\bin\Debug\net5.0\MarsRover.Model.pdb
+C:\Users\mob13\source\repos\MarsRover\MarsRover.Console\MarsRover.ChainHandler\obj\Debug\net5.0\MarsRover.ChainHandler.csproj.CopyComplete

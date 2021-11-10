@@ -29,10 +29,8 @@ namespace MarsRover.Core
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-
-                _logger.LogInformation("Vi prego, non abbandonatemi quassù tutto solo :(");
-
+                //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                Console.WriteLine($"MarsTime - {DateTime.Now} - Rover: {_roverCore.GeneratoreFrasiDiAbbandono()}");
                 await Task.Delay(10000, stoppingToken);
             }
         }

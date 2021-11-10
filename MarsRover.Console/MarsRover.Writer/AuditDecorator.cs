@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarsRover.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,9 @@ namespace MarsRover.Writer
         {
             _audit = aud;
         }
-        public override void Log(int x, int y, char direction, bool stuck)
+        public override void Log(Rover myRover)
         {
-            _audit.Log(x,y,direction,stuck);
+            _audit.Log(myRover);
         }
     }
 }

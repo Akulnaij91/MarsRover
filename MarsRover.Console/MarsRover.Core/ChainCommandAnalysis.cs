@@ -1,4 +1,5 @@
 ﻿using MarsRover.ChainHandler;
+using MarsRover.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace MarsRover.Core
     public static class ChainCommandAnalysis
     {
 
-        public static (int, int, char, bool) NewCoordinates(char command, (int, int) roverPosition, char actualOrientation, List<(int x, int z)> elencoOstacoli, int larghezzaMappa, int altezzaMappa)
+        public static (int, int, char, bool) NewCoordinates(char command, Rover myRover, MapInformation map)
         {
             //Gestisci rotazione
             MovementHandler r1 = new RotationLeftCalculator();
@@ -24,7 +25,7 @@ namespace MarsRover.Core
             r3.SetSuccessor(r4);
 
             //faccio partire catena
-            return r1.HandleRequest(command, roverPosition, actualOrientation, elencoOstacoli, larghezzaMappa, altezzaMappa);
+            return r1.HandleRequest(command, myRover, map);
 
 
         }

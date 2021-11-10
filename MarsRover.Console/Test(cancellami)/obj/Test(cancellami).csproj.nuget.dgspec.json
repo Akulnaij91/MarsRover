@@ -30,7 +30,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\MarsRover.Model\\MarsRover.Model.csproj": {
+                "projectPath": "C:\\Users\\mob13\\source\\repos\\MarsRover\\MarsRover.Console\\MarsRover.Model\\MarsRover.Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

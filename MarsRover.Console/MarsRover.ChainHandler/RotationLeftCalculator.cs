@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarsRover.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,30 +9,30 @@ namespace MarsRover.ChainHandler
 {
     public class RotationLeftCalculator : MovementHandler
     {
-        public override (int, int, char, bool) HandleRequest(char command, (int, int) roverPosition, char actualOrientation, List<(int x, int z)> elencoOstacoli, int larghezzaMappa, int altezzaMappa)
+        public override (int, int, char, bool) HandleRequest(char command, Rover myRover, MapInformation map)
         {
             if (command=='L')
             {
-                if (actualOrientation == 'N' && command == 'L')
+                if (myRover.Coordinates.Direzione == 'N' && command == 'L')
                 {
-                    return (roverPosition.Item1, roverPosition.Item2, 'W', false);
+                    return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY, 'W', false);
                 }
-                else if (actualOrientation == 'E' && command == 'L')
+                else if (myRover.Coordinates.Direzione == 'E' && command == 'L')
                 {
-                    return (roverPosition.Item1, roverPosition.Item2, 'N', false);
+                    return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY, 'N', false);
                 }
-                else if (actualOrientation == 'W' && command == 'L')
+                else if (myRover.Coordinates.Direzione == 'W' && command == 'L')
                 {
-                    return (roverPosition.Item1, roverPosition.Item2, 'S', false);
+                    return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY, 'S', false);
                 }
                 else 
                 {
-                    return (roverPosition.Item1, roverPosition.Item2, 'E', false);
+                    return (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY, 'E', false);
                 }
             }          
             else
             {
-                return successor.HandleRequest(command, roverPosition, actualOrientation, elencoOstacoli, larghezzaMappa, altezzaMappa);
+                return successor.HandleRequest(command, myRover, map);
             }
         }
     }

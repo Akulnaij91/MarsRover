@@ -489,6 +489,9 @@
         }
       },
       "MarsRover.ChainHandler/1.0.0": {
+        "dependencies": {
+          "MarsRover.Model": "1.0.0"
+        },
         "runtime": {
           "MarsRover.ChainHandler.dll": {}
         }

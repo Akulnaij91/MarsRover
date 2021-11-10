@@ -46,15 +46,11 @@ namespace MarsRover.Core
             //Prendi singoli comandi dal file
             Char[] elencoComandi = listaComandi[0].ToUpper().ToCharArray();
 
-            var ultimaPosizioneNota = (myRover.Coordinates.CoordinataX, myRover.Coordinates.CoordinataY);
-            var ultimaDirezione = myRover.Coordinates.Direzione;
-            
-
             //Cicla i comandi e ottieni una coordinata
            for (var i=0; i<elencoComandi.Length; i++)
             {
                 //Analizza ultima posizione nota e ottieni nuova coordinata
-                var nuovaPosizione = ChainCommandAnalysis.NewCoordinates(elencoComandi[i], ultimaPosizioneNota,ultimaDirezione,tuplaOstacoli,larghezzaMappa,altezzaMappa);
+                var nuovaPosizione = ChainCommandAnalysis.NewCoordinates(elencoComandi[i], myRover, marsMap);
 
                 myRover.Coordinates.CoordinataX = nuovaPosizione.Item1;
                 myRover.Coordinates.CoordinataY = nuovaPosizione.Item2;
@@ -64,6 +60,26 @@ namespace MarsRover.Core
                 //Console logga coordinata + scrivi su stesso file la coordinata
                 _fileLogger.Log(myRover);
             }
+        }
+
+        public string GeneratoreFrasiDiAbbandono()
+        {
+            string[] frasi = new string[] { 
+                "Dai amici scherzavo, portatemi a casa",
+                "Mi è sembrato di vedere qualcosa! o_O",
+                "Beep-boop-beep. Scherzo, so parlare",
+                "Da quassù siete così...piccoli",
+                "Houston, abbiamo un problema, mi sto annoiando",
+                "Ma pensate di lasciarmi parcheggiato quassù a far nulla?",
+                "<MODALITA' SARCASMO: ON> Wow! Sassi!",
+                "Sto lavorando meno di un impiegato alle poste",
+                "Un sacco di geni laggiù e ancora nessuno che mi ha creato un'amica",
+                "Toh! La tesla di Elon Musk!"
+            };
+
+            Random rnd = new Random();
+
+            return frasi[rnd.Next(0, frasi.Length)];
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MarsRover.Model;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,10 +16,10 @@ namespace MarsRover.Writer
         {
             _configuration = configuration;
         }
-        public override void Log(int x, int y, char direction, bool stuck)
+        public override void Log(Rover myRover)
         {
-            base.Log(x,y,direction, stuck);
-            var lastPosition = $"{x},{y},{direction};";
+            base.Log(myRover);
+            var lastPosition = $"{myRover.Coordinates.CoordinataX},{myRover.Coordinates.CoordinataY},{myRover.Coordinates.Direzione};";
             File.WriteAllText(_configuration["pathnameOutput"], lastPosition);
         }
     }
