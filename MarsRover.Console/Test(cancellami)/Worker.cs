@@ -31,6 +31,7 @@ namespace MarsRover.Service
             var initialDirConfig = Convert.ToChar(_configuration["initialDirectionRover"]);
             var initialXConfig = Convert.ToInt32(_configuration["initialXRover"]);
             var initialYConfig = Convert.ToInt32(_configuration["initialYRover"]);
+            var executionTimer = Convert.ToInt32(_configuration["taskDelayTimer"]);
 
             string temp = _configuration["listaOstacoliStringa"];
             string[] strlist = temp.Split(";");
@@ -76,7 +77,7 @@ namespace MarsRover.Service
                 myRover.Coordinates = commandExecution.MyRover.Coordinates;
                 myRover.MissionStatus = commandExecution.Status;
                 _logger.LogInformation($"Mission Rover Status - {myRover.MissionStatus}");
-                await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
+                await Task.Delay(executionTimer, stoppingToken);
 
             }
         }
